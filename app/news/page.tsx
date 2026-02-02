@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import NewsList from './NewsList';
 
-export const dynamic = 'force-dynamic';
+// static export friendly
 
 async function getNews() {
   const p = path.join(process.cwd(), 'data', 'news.json');
