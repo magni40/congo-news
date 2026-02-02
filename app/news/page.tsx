@@ -18,7 +18,7 @@ export default async function NewsPage() {
   const data = await getNews();
   return (
     <main className="mx-auto max-w-3xl p-6">
-      <h1 className="text-2xl font-bold mb-1">Actus Finlande & RD Congo</h1>
+      <h1 className="text-2xl font-bold mb-1">Actus RD Congo</h1>
       <p className="text-sm text-gray-500 mb-6">{data.generatedAt ? `Mise à jour: ${new Date(data.generatedAt).toLocaleString()}` : 'Exécutez npm run fetch pour charger les actus.'}</p>
       <NewsList items={data.items || []} />
       {(!data.items || data.items.length===0) && (

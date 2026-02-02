@@ -1,10 +1,10 @@
 "use client";
 import { useMemo, useState } from 'react';
 
-type Item = { source: string; region?: 'FI'|'CD'|'OTHER'; title: string; link: string; pubDate?: string; summary?: string };
+type Item = { source: string; region?: 'CD'|'OTHER'; title: string; link: string; pubDate?: string; summary?: string };
 
 export default function NewsList({ items }: { items: Item[] }) {
-  const [region, setRegion] = useState<'ALL'|'FI'|'CD'>('ALL');
+  const [region, setRegion] = useState<'ALL'|'CD'>('ALL');
   const filtered = useMemo(() => {
     if (region === 'ALL') return items;
     return items.filter(it => it.region === region);
@@ -14,7 +14,6 @@ export default function NewsList({ items }: { items: Item[] }) {
     <div>
       <div className="flex gap-2 mb-4">
         <button onClick={()=>setRegion('ALL')} className={`px-3 py-1 rounded border ${region==='ALL'?'bg-blue-600 text-white':'bg-white'}`}>Tous</button>
-        <button onClick={()=>setRegion('FI')} className={`px-3 py-1 rounded border ${region==='FI'?'bg-blue-600 text-white':'bg-white'}`}>Finlande</button>
         <button onClick={()=>setRegion('CD')} className={`px-3 py-1 rounded border ${region==='CD'?'bg-blue-600 text-white':'bg-white'}`}>RD Congo</button>
       </div>
       <ul className="space-y-4">

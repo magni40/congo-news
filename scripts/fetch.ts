@@ -5,10 +5,7 @@ import path from 'path';
 type Feed = { name: string; url: string; region: 'FI' | 'CD' | 'OTHER' };
 
 const feeds: Feed[] = [
-  // Finland local/general
-  { name: 'Yle Uutiset (recent)', url: 'https://feeds.yle.fi/uutiset/v1/recent.rss?publisherIds=YLE_UUTISET', region: 'FI' },
-  { name: 'City of Helsinki (EN)', url: 'https://www.hel.fi/uutiset/en/rss', region: 'FI' },
-  // DRC / Africa FR
+  // DRC / Africa FR only
   { name: 'RFI Afrique', url: 'https://www.rfi.fr/fr/afrique/rss', region: 'CD' },
   { name: 'Radio Okapi', url: 'https://www.radiookapi.net/rss.xml', region: 'CD' },
   { name: 'Jeune Afrique – RD Congo', url: 'https://www.jeuneafrique.com/pays/rd-congo/feed/', region: 'CD' },
